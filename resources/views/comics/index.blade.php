@@ -17,6 +17,7 @@
           <th scope="col">Prezzo</th>
           <th scope="col">Dettagli</th>
           <th scope="col">Modifica</th>
+          <th scope="col">Elimina</th>
           
         </tr>
       </thead>
@@ -35,6 +36,19 @@
             <td>
               <a href="{{route('comics.edit', $comic)}}" type="button" class="btn btn-success">Modifica</a>
             </td>
+            
+              <form class="my-5"
+              action="{{route('comics.destroy', $comic)}}"
+              method="POST">
+              @method('DELETE')
+              @csrf
+
+                {{-- <a href="{{route('comics.edit', $comic)}}" type="button" class="btn btn-danger">Elimina</a> --}}
+                <td>
+                  <button type="submit" class="btn btn-danger">Elimina</button>
+                </td>
+              </form>
+            
             
         @endforeach
         
