@@ -4,17 +4,41 @@
 
   <div class="container">
     <h1>{{$comic->title}}</h1>
+    
     <a href="{{route('comics.index')}}" type="button" class="btn btn-primary my-2">Indietro</a>
 
-    <img style="display: block" src="{{$comic->thumb}}" alt="">
+    <div class="container-img my-5">
+      <img style="display: block" src="{{$comic->thumb}}" alt="">
+    </div>
+    
 
+    <div class="div mb-3">
+    <h5>Descrizione:</h5>
+    <p>{{$comic->description}}</p>
+    </div> 
 
-            
-    <h5>Descrizione:</h5>{{$comic->description}}
-    <h5>Tipo:</h5>{{$comic->type}}
-    <h5>Serie:</h5>{{$comic->series}}
-    <h5>Data di uscita:</h5>{{$comic->sale_date}}
-    <h5>Prezzo:</h5>{{$comic->price}}
+    <div class="div mb-3">
+    <h5><h5>Serie:</h5>
+    <p>{{$comic->series}}</p>
+    </div> 
+
+    <div class="div mb-3">
+    <h5>Tipo:</h5>
+    <p>{{$comic->type}}</p>
+    </div> 
+
+    <div class="div mb-3">
+    <h5>Data di uscita:</h5>
+    <p>{{$comic->sale_date}}</p>
+    </div> 
+
+    <div class="div mb-3">
+    <h5>Prezzo:</h5>
+    <p>{{$comic->price}}</p>
+    </div> 
+    
+
+    
     
     
     

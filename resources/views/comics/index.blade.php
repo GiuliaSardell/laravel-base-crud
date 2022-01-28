@@ -4,6 +4,7 @@
 
   <div class="container">
     <h1>COMICS</h1>
+    <a href="{{route('comics.create')}}" type="button" class="btn btn-secondary mt-3">Crea il tuo fumetto</a>
 
     <table class="table my-5">
       <thead>
@@ -15,6 +16,7 @@
           <th scope="col">Serie</th>
           <th scope="col">Prezzo</th>
           <th scope="col">Dettagli</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -29,7 +31,7 @@
             <td>
               <a href="{{route('comics.show', $comic)}}" type="button" class="btn btn-primary">Dettagli</a>
             </td>
-          </tr>
+            
         @endforeach
         
       

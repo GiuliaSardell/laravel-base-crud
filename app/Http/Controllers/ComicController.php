@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\Comic;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -17,7 +18,7 @@ class ComicController extends Controller
     public function index()
     {
         $comicList = Comic::paginate(4);
-        return view('comics.home', compact('comicList'));
+        return view('comics.index', compact('comicList'));
     }
 
     /**
@@ -27,7 +28,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -38,7 +39,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all(); //salvo tutti i dati in arrivo dentro data-> ottengo un array associativo
+        //o creo un'istanza e tutte le sue proprietà qua o uso il metodo fill() prende i dati dal Model
+
+        $new_comic = new Comic();
+        $data['slug'] = Str::slug($data['title'], '-');
+        $new_comic->fill($data); //lo riempio con i dati fillable del model
+
+       
+
+        $new_comic->save();
+
+        return redirect()->route('comics.show', $new_comic);
     }
 
     /**
