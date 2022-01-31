@@ -133,12 +133,13 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate($this->errorValidate(),$this->messageErrorValidate());
         $data = $request->all();
         $comic->update($data);
 
         $data['slug'] = Str::slug($data['title'], '-');
 
-        $request->validate($this->errorValidate(),$this->messageErrorValidate());
+        
 
         return redirect()->route('comics.show', $comic);
     }
