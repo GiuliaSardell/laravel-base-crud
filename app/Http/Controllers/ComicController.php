@@ -39,6 +39,50 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                //value del form => controlli che voglio fare su quel dato
+                'title' => 'required|max:50|min:2',
+                'thumb' => 'max:255|min:2',
+                'price' => 'required|numeric|min:1',
+                'series' => 'required|max:50|min:2',
+                'type' => 'required|max:50|min:2',
+                'sale_date' => 'required|date',
+                'description' => 'required|max:255|min:2'
+            ],
+            //passo un secondo array a validate per poter stilizzare gli errori
+            [
+                'title.required' => 'Il titolo è un campo obbligatorio',
+                'title.max' => 'Il titolo non può essere più lungo di :max caratteri',
+                'title.min' => 'Il titolo non può essere più corto di :min caratteri',
+
+                'thumb.max' => 'La descrizione non può essere più lunga di :max caratteri',
+                'thumb.min' => 'La descrizione non può essere più corta di :min caratteri',
+
+                'price.required' => 'Il prezzo è un campo obbligatorio',
+                'price.numeric' => 'Il prezzo deve essere scritto in numeri',
+                'price.min' => 'Il prezzo non può essere più corto di :min caratteri',
+
+                'series.required' => 'Questo campo è obbligatorio',
+                'series.max' => 'La serie non può essere più lunga di :max caratteri',
+                'series.min' => 'La serie non può essere più corta di :min caratteri',
+
+                'type.required' => 'Questo campo è obbligatorio',
+                'type.max' => 'Il tipo non può essere più lungo di :max caratteri',
+                'type.min' => 'Il tipo non può essere più corto di :min caratteri',
+
+                'sale_date.required' => 'Questo campo è obbligatorio',
+                'sale_date.date' => 'Questo campo deve essere una data',
+
+                'description.required' => 'Questo campo è obbligatorio',
+                'description.max' => 'La descrizione non può essere più lunga di :max caratteri',
+                'description.min' => 'La descrizione non può essere più corta di :min caratteri',
+      
+
+            ]
+            );
+
         $data = $request->all(); //salvo tutti i dati in arrivo dentro data-> ottengo un array associativo
         //o creo un'istanza e tutte le sue proprietà qua o uso il metodo fill() prende i dati dal Model
 
