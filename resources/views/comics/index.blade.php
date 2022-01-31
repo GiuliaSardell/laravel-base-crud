@@ -4,6 +4,13 @@
 
   <div class="container">
     <h1>COMICS</h1>
+
+    @if(session('deleted'))
+    <div class="alert alert-danger" role="alert">
+      {{session('deleted')}}
+    </div>
+    @endif
+
     <a href="{{route('comics.create')}}" type="button" class="btn btn-secondary mt-3">Crea il tuo fumetto</a>
 
     <table class="table my-5">
