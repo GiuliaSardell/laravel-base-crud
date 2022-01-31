@@ -57,8 +57,8 @@ class ComicController extends Controller
                 'title.max' => 'Il titolo non può essere più lungo di :max caratteri',
                 'title.min' => 'Il titolo non può essere più corto di :min caratteri',
 
-                'thumb.max' => 'La descrizione non può essere più lunga di :max caratteri',
-                'thumb.min' => 'La descrizione non può essere più corta di :min caratteri',
+                'thumb.max' => 'Questo campo non può contenere più di :max caratteri',
+                'thumb.min' => 'Questo campo non può essere più corto di :min caratteri',
 
                 'price.required' => 'Il prezzo è un campo obbligatorio',
                 'price.numeric' => 'Il prezzo deve essere scritto in numeri',
