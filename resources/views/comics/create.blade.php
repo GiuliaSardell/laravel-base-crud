@@ -29,7 +29,8 @@
 
       <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
-        <input type="text" name="title" 
+        <input value="{{old('title')}}"
+        type="text" name="title" 
         class="form-control @error('title') is-invalid @enderror" 
         id="title" placeholder="Titolo">
         {{-- per mostrare l'errore sotto al campo del form--}}
@@ -42,7 +43,8 @@
 
       <div class="mb-3">
         <label for="Thumb" class="form-label">Link immagine</label>
-        <input type="text" name="thumb" 
+        <input value="{{old('thumb')}}"
+        type="text" name="thumb" 
         class="form-control @error('thumb') is-invalid @enderror" 
         id="thumb" placeholder="Link immagine">
         @error('thumb')
@@ -54,7 +56,8 @@
 
       <div class="mb-3">
         <label for="price" class="form-label">Prezzo</label>
-        <input type="text" name="price" 
+        <input value="{{old('price')}}"
+        type="text" name="price" 
         class="form-control @error('price') is-invalid @enderror" 
         id="price" placeholder="Prezzo">
         @error('price')
@@ -66,7 +69,8 @@
 
       <div class="mb-3">
         <label for="series" class="form-label">Serie</label>
-        <input type="text" name="series" 
+        <input value="{{old('series')}}"
+        type="text" name="series" 
         class="form-control @error('series') is-invalid @enderror" 
         id="series" placeholder="Serie">
         @error('series')
@@ -78,7 +82,8 @@
 
       <div class="mb-3">
         <label for="type" class="form-label">Tipo</label>
-        <input type="text" name="type" 
+        <input value="{{old('type')}}"
+        type="text" name="type" 
         class="form-control @error('type') is-invalid @enderror" 
         id="type" placeholder="Tipo">
         @error('type')
@@ -90,7 +95,8 @@
 
       <div class="mb-3">
         <label for="sale_date" class="form-label">Data di uscita</label>
-        <input type="text" name="sale_date" 
+        <input value="{{old('sale_date')}}"
+        type="text" name="sale_date" 
         class="form-control @error('sale_date') is-invalid @enderror" 
         id="sale_date" placeholder="Es. 2010-10-10">
         @error('sale_date')
@@ -103,7 +109,8 @@
 
       <div class="mb-5">
         <label for="description" class="form-label">Descrizione</label>
-        <textarea type="text" name="description" 
+        <textarea value="{{old('description')}}"
+        type="text" name="description" 
         class="form-control @error('description') is-invalid @enderror" 
         id="description" placeholder="Descrizione"></textarea>
         @error('description')
