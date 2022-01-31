@@ -37,16 +37,17 @@
               <a href="{{route('comics.edit', $comic)}}" type="button" class="btn btn-success">Modifica</a>
             </td>
             
-              <form class="my-5"
+              <form onsubmit="return confirm('Sei sicuro di voler eliminare {{$comic->title}}?')"
+              class="my-5"
               action="{{route('comics.destroy', $comic)}}"
               method="POST">
               @method('DELETE')
               @csrf
 
-                {{-- <a href="{{route('comics.edit', $comic)}}" type="button" class="btn btn-danger">Elimina</a> --}}
                 <td>
                   <button type="submit" class="btn btn-danger">Elimina</button>
                 </td>
+
               </form>
             
             
